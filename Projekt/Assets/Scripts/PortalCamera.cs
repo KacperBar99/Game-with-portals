@@ -9,7 +9,7 @@ public class PortalCamera : MonoBehaviour
     [SerializeField,Tooltip("Which culling layer should not be visible to this camera.")]
     private string cullingSkip;
 
-
+   
     private Camera objectCamera;
     private Transform playerCamera;
     public Transform portal;
@@ -39,9 +39,5 @@ public class PortalCamera : MonoBehaviour
         Quaternion portalRotation = Quaternion.AngleAxis(angularDifference, Vector3.up);
         Vector3 newCameraDirection = portalRotation * playerCamera.forward;
         transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
-    }
-    private void Reset()
-    {
-        Debug.Log("test");
     }
 }
