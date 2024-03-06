@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 3190947227331917596}
-  playerIsOverlapping: 0
+  cameraToDisable: {fileID: 8155570878684389994}
 --- !u!1 &2044627665181505637
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 5190372905617070623}
   - component: {fileID: 5272737529061681129}
   - component: {fileID: 4801500600639909874}
-  - component: {fileID: 8406655646914761416}
   m_Layer: 1
   m_Name: Render plane
   m_TagString: Untagged
@@ -253,18 +252,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8406655646914761416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5466571314464073707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada4cb167c6ad0b4faf93e0b0e1107d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5713069973123653066
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +263,6 @@ GameObject:
   - component: {fileID: 8098384953239584120}
   - component: {fileID: 3513048224399414112}
   - component: {fileID: 3449721063474166521}
-  - component: {fileID: 1031437684866138995}
   m_Layer: 1
   m_Name: Render plane
   m_TagString: Untagged
@@ -349,18 +335,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1031437684866138995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5713069973123653066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada4cb167c6ad0b4faf93e0b0e1107d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6980902989883575180
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,4 +756,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 2667812671642142614}
-  playerIsOverlapping: 0
+  cameraToDisable: {fileID: 3714775032778868017}
