@@ -111,7 +111,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth: 0.33
+    - _Depth: 0.1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Divide: 50
@@ -142,6 +142,11 @@ Material:
     - _Wave_divide: 10
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _faom_speed: 0.1
+    - _foam_amount: -2.1
+    - _foam_cutoff: -118.1
+    - _foam_size: -21.8
+    - _foam_speed: -28.1
     - _wave_speed: 0.3
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
@@ -149,7 +154,10 @@ Material:
     - _Darker_Water: {r: 0.28435388, g: 0.47787562, b: 0.8490566, a: 1}
     - _Deep_Water: {r: 0, g: 0.39084533, b: 1.1725355, a: 0.85882354}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Foam_Color: {r: 1024, g: 1024, b: 1024, a: 1}
     - _Lighter_Water: {r: 0.12375401, g: 0.43281776, b: 0.9716981, a: 1}
-    - _Shallow_Water: {r: 0.756942, g: 1.0431774, b: 1.981132, a: 0.6156863}
+    - _Shallow_Water: {r: 3.027768, g: 4.1727095, b: 7.924528, a: 0.3137255}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _faom_color: {r: 7.7747464, g: 0, b: 0, a: 1}
+    - _foam_color: {r: 1024, g: 1024, b: 1024, a: 0}
   m_BuildTextureStacks: []
