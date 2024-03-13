@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.106503695, g: 0.177468, b: 0.30260408, a: 1}
+  m_IndirectSpecularColor: {r: 0.34092343, g: 0.44197786, b: 0.5743041, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3791,13 +3791,17 @@ PrefabInstance:
     - target: {fileID: 3449721063474166521, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e6960f21691db114f82fca85b141226d, type: 2}
+      objectReference: {fileID: 2100000, guid: f627d2da6f237794eb49a9d985b0cc15, type: 2}
     - target: {fileID: 4801500600639909874, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 49d0f0b951ea27047ab5e3cf774f6528, type: 2}
+      objectReference: {fileID: 2100000, guid: f627d2da6f237794eb49a9d985b0cc15, type: 2}
     - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: cullingSkip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8337823559815749742, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
@@ -4390,7 +4394,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048141748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01c9610d4f70f994caa023ea0d4e5181, type: 3}
   m_Name: 
@@ -4654,6 +4658,10 @@ PrefabInstance:
     - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8337823559815749742, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_Name

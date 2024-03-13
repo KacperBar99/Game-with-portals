@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 4801500600639909874}
   m_Layer: 1
   m_Name: Render plane
-  m_TagString: Untagged
+  m_TagString: Renderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af6abcf548039e64eab32c177e0d0d74, type: 2}
+  - {fileID: 2100000, guid: f627d2da6f237794eb49a9d985b0cc15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 3449721063474166521}
   m_Layer: 1
   m_Name: Render plane
-  m_TagString: Untagged
+  m_TagString: Renderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,7 +313,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4c982e86f67f854e9d0d604e6b293c8, type: 2}
+  - {fileID: 2100000, guid: f627d2da6f237794eb49a9d985b0cc15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   copyCamera: 1
   cullingSkip: IgnoreCamera2
+  renderPlane: {fileID: 3449721063474166521}
   portal: {fileID: 666258050162717046}
   Bportal: {fileID: 7815189883926882422}
 --- !u!114 &1195808412660785214
@@ -610,6 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   copyCamera: 1
   cullingSkip: IgnoreCamera
+  renderPlane: {fileID: 4801500600639909874}
   portal: {fileID: 7815189883926882422}
   Bportal: {fileID: 666258050162717046}
 --- !u!114 &8582596988521874863

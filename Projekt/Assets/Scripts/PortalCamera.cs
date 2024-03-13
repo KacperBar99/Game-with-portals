@@ -8,6 +8,8 @@ public class PortalCamera : MonoBehaviour
     private bool copyCamera;
     [SerializeField,Tooltip("Which culling layer should not be visible to this camera.")]
     private string cullingSkip;
+    [SerializeField]
+    private Renderer renderPlane;
 
    
     private Camera objectCamera;
@@ -19,11 +21,18 @@ public class PortalCamera : MonoBehaviour
     {
         this.playerCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         objectCamera = GetComponent<Camera>();
-        if(copyCamera && objectCamera != null)
+        
+        if (copyCamera && objectCamera != null)
         {
             this.objectCamera.CopyFrom(Camera.main);
             this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(cullingSkip));
         }
+    }
+
+    private void Start()
+    {
+        objectCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        renderPlane.material.mainTexture=objectCamera.targetTexture;
     }
 
 
