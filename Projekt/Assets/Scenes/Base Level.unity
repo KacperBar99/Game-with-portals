@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!20 &6631787 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-  m_PrefabInstance: {fileID: 1756541044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &14355085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,11 +1751,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933425429}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!20 &946410088 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-  m_PrefabInstance: {fileID: 55863940640915728}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954158194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4363,7 +4353,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2048141749}
-  - component: {fileID: 2048141750}
   - component: {fileID: 2048141751}
   m_Layer: 0
   m_Name: Game Manager
@@ -4387,28 +4376,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2048141750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048141748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c9610d4f70f994caa023ea0d4e5181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameras:
-  - {fileID: 946410088}
-  - {fileID: 1554120350}
-  - {fileID: 6631787}
-  - {fileID: 2112396143}
-  materials:
-  - {fileID: 2100000, guid: f4c982e86f67f854e9d0d604e6b293c8, type: 2}
-  - {fileID: 2100000, guid: af6abcf548039e64eab32c177e0d0d74, type: 2}
-  - {fileID: 2100000, guid: e6960f21691db114f82fca85b141226d, type: 2}
-  - {fileID: 2100000, guid: 49d0f0b951ea27047ab5e3cf774f6528, type: 2}
 --- !u!114 &2048141751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4422,11 +4389,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFPS: 1
---- !u!20 &2112396143 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-  m_PrefabInstance: {fileID: 1756541044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &55863940640915728
 PrefabInstance:
   m_ObjectHideFlags: 0
