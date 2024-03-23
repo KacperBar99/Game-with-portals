@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 2667812671642142614}
   - component: {fileID: 727081488280025516}
   - component: {fileID: 7923443861342501033}
+  - component: {fileID: 517514951135609019}
   m_Layer: 0
   m_Name: Collider plane B
   m_TagString: Untagged
@@ -164,6 +165,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 3190947227331917596}
+--- !u!114 &517514951135609019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453634865864062723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   cameraToDisable: {fileID: 8155570878684389994}
 --- !u!1 &2044627665181505637
 GameObject:
@@ -702,6 +715,7 @@ GameObject:
   - component: {fileID: 3190947227331917596}
   - component: {fileID: 4275539074858920981}
   - component: {fileID: 3190964440066100674}
+  - component: {fileID: 1689224668162802996}
   m_Layer: 0
   m_Name: Collider plane
   m_TagString: Untagged
@@ -758,4 +772,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 2667812671642142614}
+--- !u!114 &1689224668162802996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376757235990159836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   cameraToDisable: {fileID: 3714775032778868017}

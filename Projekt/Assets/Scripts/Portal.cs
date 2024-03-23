@@ -7,11 +7,7 @@ public class Portal : MonoBehaviour
     private Transform player;
     public Transform receiver;
 
-    [SerializeField, Tooltip("Portal Camera")]
-    private Camera cameraToDisable;
     private Camera mainCamera;
-    private Plane[] cameraFrustum;
-    private Bounds bounds;
 
 
     private bool playerIsOverlapping = false;
@@ -23,8 +19,6 @@ public class Portal : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
-        bounds = GetComponent<Collider>().bounds;
-        cameraToDisable.enabled = false;
     }
 
 
@@ -33,26 +27,6 @@ public class Portal : MonoBehaviour
         Vector3 portalToPlayer = player.position - transform.position;
         float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
-        cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
-
-        if (dotProduct<0)
-        {
-            if (cameraToDisable.enabled)
-            {
-                cameraToDisable.enabled = false;
-            }
-        }
-        else
-        {
-            if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
-            {
-                cameraToDisable.enabled = true;
-            }
-            else if (cameraToDisable.enabled && !GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
-            {
-                cameraToDisable.enabled = false;
-            }
-        }
 
         if (this.playerIsOverlapping)
         {
