@@ -7,7 +7,8 @@ public class Portal : MonoBehaviour
     private Transform player;
     public Transform receiver;
 
-    private Camera mainCamera;
+    private float newScale = 1.0f;
+
 
 
     private bool playerIsOverlapping = false;
@@ -18,7 +19,6 @@ public class Portal : MonoBehaviour
     }
     private void Start()
     {
-        mainCamera = Camera.main;
     }
 
 
@@ -41,8 +41,14 @@ public class Portal : MonoBehaviour
                 player.position = receiver.position + positionOffset;
                 pl.enabled = true;
                 playerIsOverlapping = false;
+                this.player.localScale = new Vector3(newScale, newScale, newScale);
             }
         }
+    }
+
+    public void setScale(float scale)
+    {
+        this.newScale=scale;
     }
 
     private void OnTriggerEnter(Collider other)
