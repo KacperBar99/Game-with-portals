@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
@@ -13,6 +14,8 @@ public class PortalCamera : MonoBehaviour
 
     [SerializeField]
     private Vector3 CameraOffset;
+    [SerializeField]
+    private bool useOffset;
 
    
     private Camera objectCamera;
@@ -43,9 +46,17 @@ public class PortalCamera : MonoBehaviour
     void LateUpdate()
     {
         Vector3 playerOffsetFromPortal = playerCamera.position - Bportal.position;
-        transform.position = portal.position + playerOffsetFromPortal+CameraOffset;
+        if (useOffset)
+        {
+            this.transform.position = CameraOffset+portal.position+playerOffsetFromPortal;
+        }
+        else
+        {
+            transform.position = portal.position + playerOffsetFromPortal;
+        }
         
-        
+
+       
 
         float angularDifference = Quaternion.Angle(portal.rotation, Bportal.rotation);
 
@@ -56,6 +67,11 @@ public class PortalCamera : MonoBehaviour
 
     public void setOffset(Vector3 offset)
     {
+        this.useOffset = true;
         this.CameraOffset = offset;
+    }
+    public void setUseOffset(bool useOffset)
+    {
+        this.useOffset = useOffset;
     }
 }

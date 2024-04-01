@@ -52,7 +52,6 @@ MonoBehaviour:
   fakeB: {fileID: 5068996601275808988}
   fake: {fileID: 1378404970892954759}
   real: {fileID: 3713806236767127690}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &2485809187480715776
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 1004704920357233633}
+  wrapper: {fileID: 2329012408748448874}
 --- !u!114 &2780829071766737990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 354166034380432799}
+  wrapper: {fileID: 3735211152443533946}
 --- !u!114 &3426202074789417528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 341166539486794603}
+  wrapper: {fileID: 7554760031091112324}
 --- !u!114 &3947612568703717833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,6 +1319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 983821856323130645}
+  wrapper: {fileID: 5068996601275808988}
 --- !u!114 &4599179467511306167
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,12 +13,11 @@ public class Portal : MonoBehaviour
 
     private bool playerIsOverlapping = false;
 
+    public PortalWrapper wrapper;
+
     private void Awake()
     {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-    private void Start()
-    {
     }
 
 
@@ -42,6 +41,7 @@ public class Portal : MonoBehaviour
                 pl.enabled = true;
                 playerIsOverlapping = false;
                 this.player.localScale = new Vector3(newScale, newScale, newScale);
+                this.wrapper.setEvent();
             }
         }
     }
