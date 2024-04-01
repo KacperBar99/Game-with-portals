@@ -366,6 +366,7 @@ MonoBehaviour:
   copyCamera: 1
   cullingSkip: IgnoreCamera
   renderPlane: {fileID: 4801500600639909874}
+  CameraOffset: {x: 0, y: 0, z: 0}
   portal: {fileID: 7815189883926882422}
   Bportal: {fileID: 666258050162717046}
 --- !u!114 &8582596988521874863

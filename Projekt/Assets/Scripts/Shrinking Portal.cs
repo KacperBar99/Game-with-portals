@@ -6,23 +6,31 @@ public class ShrinkingPortal : MonoBehaviour
 {
 
     [SerializeField]
-    private Portal tunnelA;
+    private PortalWrapper tunnelA;
     [SerializeField]
-    private Portal tunnelB;
+    private PortalWrapper tunnelB;
     [SerializeField]
-    private Portal fakeA;
+    private PortalWrapper fakeA;
     [SerializeField]
-    private Portal fakeB;
+    private PortalWrapper fakeB;
+
+    [SerializeField]
+    private Transform fake;
+    [SerializeField]
+    private Transform real;
 
 
     private float entryScale;
     private float exitScale;
+    [SerializeField]
     private Vector3 offset;
+
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        Vector3 difference = this.fake.position - this.real.position;
+        this.tunnelB.setOffset(difference);
     }
 
     // Update is called once per frame

@@ -11,6 +11,9 @@ public class PortalCamera : MonoBehaviour
     [SerializeField]
     private Renderer renderPlane;
 
+    [SerializeField]
+    private Vector3 CameraOffset;
+
    
     private Camera objectCamera;
     private Transform playerCamera;
@@ -26,6 +29,7 @@ public class PortalCamera : MonoBehaviour
         {
             this.objectCamera.CopyFrom(Camera.main);
             this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(cullingSkip));
+            this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer("UI"));
         }
     }
 
@@ -39,7 +43,7 @@ public class PortalCamera : MonoBehaviour
     void LateUpdate()
     {
         Vector3 playerOffsetFromPortal = playerCamera.position - Bportal.position;
-        transform.position = portal.position + playerOffsetFromPortal;
+        transform.position = portal.position + playerOffsetFromPortal+CameraOffset;
         
         
 
@@ -48,5 +52,10 @@ public class PortalCamera : MonoBehaviour
         Quaternion portalRotation = Quaternion.AngleAxis(angularDifference, Vector3.up);
         Vector3 newCameraDirection = portalRotation * playerCamera.forward;
         transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+    }
+
+    public void setOffset(Vector3 offset)
+    {
+        this.CameraOffset = offset;
     }
 }
