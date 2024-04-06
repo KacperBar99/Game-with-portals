@@ -15,13 +15,13 @@ public class PortalWrapper : MonoBehaviour
     [SerializeField]
     private GameObject frame;
 
-    private ShrinkingPortal wrapper;
+    private TunnelPortal wrapper;
 
     
     // Start is called before the first frame update
     void Start()
     {
-        this.wrapper = this.gameObject.GetComponentInParent<ShrinkingPortal>();
+        this.wrapper = this.gameObject.GetComponentInParent<TunnelPortal>();
     }
 
     // Update is called once per frame
@@ -35,10 +35,9 @@ public class PortalWrapper : MonoBehaviour
         this._camera.setOffset(offset);
     }
 
-    public void setEvent()
+    public void setEvent(bool offsetChgange)
     {
-        string[] ret = { name, this.gameObject.transform.parent.name };
-        this.wrapper.checkPlayerPosition(ret);
+        this.wrapper.checkPlayerPosition(offsetChgange);
     }
 
     public void setUseOffset(bool useOffset)

@@ -20,6 +20,8 @@ public class Portal : MonoBehaviour
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    [SerializeField]
+    private bool isDisablingOffset;
 
     private void LateUpdate()
     {
@@ -41,7 +43,9 @@ public class Portal : MonoBehaviour
                 pl.enabled = true;
                 playerIsOverlapping = false;
                 this.player.localScale = new Vector3(newScale, newScale, newScale);
-                this.wrapper.setEvent();
+                
+                if(this.wrapper != null)
+                this.wrapper.setEvent(isDisablingOffset);
             }
         }
     }

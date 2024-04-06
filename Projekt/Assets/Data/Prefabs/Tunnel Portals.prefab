@@ -376,7 +376,6 @@ GameObject:
   - component: {fileID: 341166539486794603}
   - component: {fileID: 3147722120573316433}
   - component: {fileID: 5497859833334443092}
-  - component: {fileID: 2780829071766737990}
   m_Layer: 0
   m_Name: Collider plane B
   m_TagString: Untagged
@@ -434,19 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receiver: {fileID: 1004704920357233633}
   wrapper: {fileID: 2329012408748448874}
---- !u!114 &2780829071766737990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861187285494735870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraToDisable: {fileID: 5807251894876829335}
+  isDisablingOffset: 0
 --- !u!1 &4363597214146160000
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +445,6 @@ GameObject:
   - component: {fileID: 983821856323130645}
   - component: {fileID: 2501144292917160751}
   - component: {fileID: 4996602564854311466}
-  - component: {fileID: 3426202074789417528}
   m_Layer: 0
   m_Name: Collider plane B
   m_TagString: Untagged
@@ -516,19 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receiver: {fileID: 354166034380432799}
   wrapper: {fileID: 3735211152443533946}
---- !u!114 &3426202074789417528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4363597214146160000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraToDisable: {fileID: 6452722824231727337}
+  isDisablingOffset: 1
 --- !u!1 &4460272627957394584
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +656,7 @@ MonoBehaviour:
   cullingSkip: IgnoreCamera2
   renderPlane: {fileID: 1037577590108810756}
   CameraOffset: {x: 0, y: 0, z: 0}
+  useOffset: 0
   portal: {fileID: 2920283638420039051}
   Bportal: {fileID: 5606077322859396235}
 --- !u!114 &3540310068300477635
@@ -829,6 +804,7 @@ MonoBehaviour:
   cullingSkip: IgnoreCamera
   renderPlane: {fileID: 7638279662209383793}
   CameraOffset: {x: 0, y: 0, z: 0}
+  useOffset: 0
   portal: {fileID: 4960684699347581685}
   Bportal: {fileID: 2422307214352098293}
 --- !u!114 &6897623213577918252
@@ -976,6 +952,7 @@ MonoBehaviour:
   cullingSkip: IgnoreCamera2
   renderPlane: {fileID: 539616937230772346}
   CameraOffset: {x: 0, y: 0, z: 0}
+  useOffset: 0
   portal: {fileID: 2422307214352098293}
   Bportal: {fileID: 4960684699347581685}
 --- !u!114 &4051718847197229757
@@ -1123,6 +1100,7 @@ MonoBehaviour:
   cullingSkip: IgnoreCamera
   renderPlane: {fileID: 7141498510564621071}
   CameraOffset: {x: 0, y: 0, z: 0}
+  useOffset: 0
   portal: {fileID: 5606077322859396235}
   Bportal: {fileID: 2920283638420039051}
 --- !u!114 &6242668755818058066
@@ -1180,7 +1158,6 @@ GameObject:
   - component: {fileID: 1004704920357233633}
   - component: {fileID: 1939974430236915944}
   - component: {fileID: 1004721725102037311}
-  - component: {fileID: 3947612568703717833}
   m_Layer: 0
   m_Name: Collider plane
   m_TagString: Untagged
@@ -1238,19 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receiver: {fileID: 341166539486794603}
   wrapper: {fileID: 7554760031091112324}
---- !u!114 &3947612568703717833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6195211492975473953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraToDisable: {fileID: 1311779358760653260}
+  isDisablingOffset: 1
 --- !u!1 &6693191184334173023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1227,6 @@ GameObject:
   - component: {fileID: 354166034380432799}
   - component: {fileID: 1438620374230597270}
   - component: {fileID: 354184551178231617}
-  - component: {fileID: 4599179467511306167}
   m_Layer: 0
   m_Name: Collider plane
   m_TagString: Untagged
@@ -1320,19 +1284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receiver: {fileID: 983821856323130645}
   wrapper: {fileID: 5068996601275808988}
---- !u!114 &4599179467511306167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693191184334173023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraToDisable: {fileID: 1958869629197981618}
+  isDisablingOffset: 0
 --- !u!1 &7169708740174378344
 GameObject:
   m_ObjectHideFlags: 0
