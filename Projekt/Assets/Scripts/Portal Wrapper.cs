@@ -44,4 +44,16 @@ public class PortalWrapper : MonoBehaviour
     {
         this._camera.setUseOffset(useOffset);
     }
+    public void setCameraStatus(bool status)
+    {
+        this._camera.setCameraStatus(status);
+    }
+    public bool getCameraStatus()
+    {
+        return this._camera.getCameraStatus();
+    }
+    public Portal GetPortal()
+    {
+        return this.colliderPlane;
+    }
 }

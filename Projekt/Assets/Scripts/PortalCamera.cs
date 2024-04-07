@@ -74,4 +74,19 @@ public class PortalCamera : MonoBehaviour
     {
         this.useOffset = useOffset;
     }
+    public void setCameraStatus(bool status)
+    {
+        if (status)
+        {
+            this.objectCamera.enabled = true;
+        }
+        else
+        {
+            this.objectCamera.enabled = false;
+        }
+    }
+    public bool getCameraStatus()
+    {
+        return this.objectCamera.enabled;
+    }
 }

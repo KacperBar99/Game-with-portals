@@ -9,6 +9,11 @@ public class TunnelPortal : MonoBehaviour
         x=0, y=1, z=2
     }
 
+
+    private Camera mainCamera;
+    private Plane[] cameraFrustum;
+    private Bounds[] bounds;
+
     [SerializeField]
     private PortalWrapper tunnelA;
     [SerializeField]
@@ -38,9 +43,26 @@ public class TunnelPortal : MonoBehaviour
     private float distanceReal;
     private float distanceFake;
 
+    private bool inside = false;
+
+
+    private void Awake()
+    {
+        this.player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     // Start is called before the first frame update
     void Start()
     {
+        this.mainCamera = Camera.main;
+        bounds = new Bounds[4];
+        bounds[0] = tunnelA.GetPortal().GetComponent<Collider>().bounds;
+        bounds[1] = tunnelB.GetPortal().GetComponent<Collider>().bounds;
+        bounds[2] = fakeA.GetPortal().GetComponent<Collider>().bounds;
+        bounds[3] = fakeB.GetPortal().GetComponent<Collider>().bounds;
+        tunnelA.setCameraStatus(false);
+        tunnelB.setCameraStatus(false);
+        fakeA.setCameraStatus(false);
+        fakeB.setCameraStatus(false);
 
         Vector3 differenceA = this.fake.position - this.real.position;
         Vector3 differenceB = differenceA;
@@ -92,21 +114,134 @@ public class TunnelPortal : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
+        Vector3 portalToPlayer;
+        float dotProduct;
+        cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+        if (inside)
+        {
+            
 
+            //fake A
+            portalToPlayer = player.position - fakeA.transform.position;
+            dotProduct = Vector3.Dot(transform.up, portalToPlayer);
+
+            if (dotProduct < 0)
+            {
+                if (tunnelA.getCameraStatus())
+                {
+                    tunnelA.setCameraStatus(false);
+                }
+            }
+            else
+            {
+                if(!tunnelA.getCameraStatus() && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[2]))
+                {
+                    tunnelA.setCameraStatus(true);
+                }else if(tunnelA.getCameraStatus() && !GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[2]))
+                {
+                    tunnelA.setCameraStatus(false);
+                }
+            }
+
+
+            //fake B
+            portalToPlayer = player.position - fakeB.transform.position;
+            dotProduct = Vector3.Dot(transform.up, portalToPlayer);
+
+            if (dotProduct < 0)
+            {
+                if (tunnelB.getCameraStatus())
+                {
+                    tunnelB.setCameraStatus(false);
+                }
+            }
+            else
+            {
+                if (!tunnelB.getCameraStatus() && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[3]))
+                {
+                    tunnelB.setCameraStatus(true);
+                }
+                else if (tunnelB.getCameraStatus() && !GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[3]))
+                {
+                    tunnelB.setCameraStatus(false);
+                }
+            }
+        }
+        else
+        {
+
+
+            //tunnel A
+
+            portalToPlayer = player.position - tunnelA.transform.position;
+            dotProduct = Vector3.Dot(transform.up, portalToPlayer);
+            if(dotProduct < 0)
+            {
+               this.tunnelB.setCameraStatus(false);
+               this.fakeA.setCameraStatus(false);
+            }
+            else
+            {
+                if (!fakeA.getCameraStatus() && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[0]))
+                {
+                    this.tunnelB.setCameraStatus(true);
+                    fakeA.setCameraStatus(true);
+                }
+                else if (fakeA.getCameraStatus() && !GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[0]))
+                {
+                    this.tunnelB.setCameraStatus(false);
+                    this.fakeA.setCameraStatus(false);
+                }
+            }
+           
+
+
+
+            //tunnelB
+            portalToPlayer = player.position - tunnelB.transform.position;
+            dotProduct = Vector3.Dot(transform.up, portalToPlayer);
+            if(dotProduct < 0)
+            {
+                this.tunnelA.setCameraStatus(false);
+                this.fakeB.setCameraStatus(false);
+            }
+            else
+            {
+                if (!fakeB.getCameraStatus() && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[1]))
+                {
+                    this.tunnelA.setCameraStatus(true);
+                    fakeB.setCameraStatus(true);
+
+                }
+                else if (fakeB.getCameraStatus() && !GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[1]))
+                {
+                    this.tunnelA.setCameraStatus(false);
+                    this.fakeB.setCameraStatus(false);
+
+                }
+            }
+           
+        }
     }
+   
 
     public void checkPlayerPosition(bool offsetChange)
     {
 
         if (offsetChange)
         {
+            this.inside = true;
             this.tunnelA.setUseOffset(false);
             this.tunnelB.setUseOffset(false);
+            this.tunnelA.setCameraStatus(true);
+            this.tunnelB.setCameraStatus(true);
+            this.fakeA.setCameraStatus(false);
+            this.fakeB.setCameraStatus(false);
         }
         else {
+            this.inside = false;
             this.tunnelB.setUseOffset(true);
             this.tunnelA.setUseOffset(true);
         }
