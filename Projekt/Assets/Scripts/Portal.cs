@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    public float newSize = 1.0f;
+
     private Transform player;
     public Transform receiver;
 
@@ -18,6 +20,10 @@ public class Portal : MonoBehaviour
     private void Awake()
     {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (this.newSize != 1.0f)
+        {
+            this.setScale(this.newSize);
+        }
     }
 
     [SerializeField]

@@ -9,7 +9,6 @@ public class TunnelPortal : MonoBehaviour
         x=0, y=1, z=2
     }
 
-
     private Camera mainCamera;
     private Plane[] cameraFrustum;
     private Bounds[] bounds;
@@ -69,8 +68,6 @@ public class TunnelPortal : MonoBehaviour
         this.distanceReal = Vector3.Distance(this.tunnelA.transform.position, this.tunnelB.transform.position);
         this.distanceFake = Vector3.Distance(this.fakeA.transform.position, this.fakeB.transform.position);
         float lengthDifference = Mathf.Abs(distanceReal - distanceFake)/2.0f;
-
-
         switch (orientation)
         {
             case direction.x:
@@ -102,15 +99,9 @@ public class TunnelPortal : MonoBehaviour
             this.tunnelB.setOffset(differenceB);
             this.tunnelA.setOffset(differenceA);
         }
-        
 
 
 
-
-
-
-
-        this.player = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
 
