@@ -171,13 +171,14 @@ public class TunnelPortal : MonoBehaviour
         }
         else
         {
+            //outside
 
 
             //tunnel A
 
-            portalToPlayer = player.position - tunnelA.transform.position;
-            dotProduct = Vector3.Dot(transform.up, portalToPlayer);
-            if(dotProduct < 0)
+            portalToPlayer = player.position - tunnelA.getPosition();
+            dotProduct = Vector3.Dot(this.tunnelA.getLocalUp(), portalToPlayer);
+            if (dotProduct < 0)
             {
                this.tunnelB.setCameraStatus(false);
                this.fakeA.setCameraStatus(false);
@@ -195,14 +196,14 @@ public class TunnelPortal : MonoBehaviour
                     this.fakeA.setCameraStatus(false);
                 }
             }
-           
+
 
 
 
             //tunnelB
-            portalToPlayer = player.position - tunnelB.transform.position;
-            dotProduct = Vector3.Dot(transform.up, portalToPlayer);
-            if(dotProduct < 0)
+            portalToPlayer = player.position - tunnelB.getPosition();
+            dotProduct = Vector3.Dot(this.tunnelB.getLocalUp(), portalToPlayer);
+            if (dotProduct < 0)
             {
                 this.tunnelA.setCameraStatus(false);
                 this.fakeB.setCameraStatus(false);

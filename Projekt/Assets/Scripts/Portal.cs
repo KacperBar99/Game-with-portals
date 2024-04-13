@@ -70,4 +70,12 @@ public class Portal : MonoBehaviour
             this.playerIsOverlapping = false;
         }
     }
+    public Vector3 getPosition()
+    {
+        return this.transform.position;
+    }
+    public Vector3 getLocalUp()
+    {
+        return this.transform.up;
+    }
 }

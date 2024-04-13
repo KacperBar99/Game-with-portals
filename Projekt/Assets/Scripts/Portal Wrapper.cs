@@ -56,4 +56,12 @@ public class PortalWrapper : MonoBehaviour
     {
         return this.colliderPlane;
     }
+    public Vector3 getPosition()
+    {
+        return this.colliderPlane.getPosition();
+    }
+    public Vector3 getLocalUp()
+    {
+        return this.colliderPlane.getLocalUp();
+    }
 }

@@ -14,6 +14,9 @@ public class Renderingcontrol : MonoBehaviour
     private Bounds bounds;
 
 
+    public bool showdot=false;
+
+
     private void Awake()
     {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -34,6 +37,7 @@ public class Renderingcontrol : MonoBehaviour
 
         cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
 
+        if(showdot)Debug.Log(dotProduct);
         if (dotProduct < 0)
         {
             if (cameraToDisable.enabled)
