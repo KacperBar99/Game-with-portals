@@ -4,26 +4,19 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    public float newSize = 1.0f;
+    public Transform receiver;
+    public PortalWrapper wrapper;
+
 
     private Transform player;
-    public Transform receiver;
-
-    private float newScale = 1.0f;
-
-
-
     private bool playerIsOverlapping = false;
 
-    public PortalWrapper wrapper;
+    
 
     private void Awake()
     {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
-        if (this.newSize != 1.0f)
-        {
-            this.setScale(this.newSize);
-        }
+        
     }
 
     [SerializeField]
@@ -48,17 +41,11 @@ public class Portal : MonoBehaviour
                 player.position = receiver.position + positionOffset;
                 pl.enabled = true;
                 playerIsOverlapping = false;
-                this.player.localScale = new Vector3(newScale, newScale, newScale);
                 
                 if(this.wrapper != null)
                 this.wrapper.setEvent(isDisablingOffset);
             }
         }
-    }
-
-    public void setScale(float scale)
-    {
-        this.newScale=scale;
     }
 
     private void OnTriggerEnter(Collider other)

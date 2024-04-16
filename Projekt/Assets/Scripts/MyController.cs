@@ -25,12 +25,22 @@ public class MyController : MonoBehaviour
 
     CharacterController characterController;
 
+    private float step;
+    private float height;
+    private float radius;
+    private float defaultSpeed;
+    private float defaultRun;
+    private float defaultJump;
     
     void Start()
     {
+        
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        this.defaultJump = this.jumpPower;
+        this.defaultRun = this.runSpeed;
+        this.defaultSpeed = this.walkspeed;
     }
 
     // Update is called once per frame
@@ -73,5 +83,13 @@ public class MyController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation*=Quaternion.Euler(0,Input.GetAxis("Mouse X")*lookSpeed,0);
         }
+    }
+    public void setNewScale(float scale)
+    {
+        this.transform.localScale = scale*new Vector3(1,1,1);
+        
+        this.walkspeed = scale*this.defaultSpeed;
+        this.runSpeed = scale*this.defaultRun;
+        this.jumpPower = scale*this.defaultJump;
     }
 }

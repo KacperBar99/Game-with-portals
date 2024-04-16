@@ -17,7 +17,7 @@ public class PortalWrapper : MonoBehaviour
 
     private TunnelPortal wrapper;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
