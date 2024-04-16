@@ -25,9 +25,6 @@ public class MyController : MonoBehaviour
 
     CharacterController characterController;
 
-    private float step;
-    private float height;
-    private float radius;
     private float defaultSpeed;
     private float defaultRun;
     private float defaultJump;
