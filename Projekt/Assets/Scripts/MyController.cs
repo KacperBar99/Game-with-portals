@@ -83,6 +83,7 @@ public class MyController : MonoBehaviour
     }
     public void setNewScale(float scale)
     {
+        if (Mathf.Abs(1 - scale) < 0.01f) scale = 1.0f;
         this.transform.localScale = scale*new Vector3(1,1,1);
         
         this.walkspeed = scale*this.defaultSpeed;

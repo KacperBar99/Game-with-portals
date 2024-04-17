@@ -12,14 +12,15 @@ public class ShrinkingTunnel : MonoBehaviour
     private float tunnelDistance;
     private bool inside=false;
     private float initialScale=1.0f;
-    private float scaleDifference;
+    private float startByEndScale;
+    private bool startEntry;
 
     // Start is called before the first frame update
     void Start()
     {
         this.tunnelDistance = Vector3.Distance(this.start.transform.position, this.end.transform.position);
         this.player = GameObject.FindGameObjectWithTag("Player");
-        this.scaleDifference = this.start.transform.localScale.y / this.end.transform.localScale.y;
+        this.startByEndScale = this.start.transform.localScale.y / this.end.transform.localScale.y;
     }
 
     // Update is called once per frame
@@ -27,19 +28,29 @@ public class ShrinkingTunnel : MonoBehaviour
     {
         if (inside)
         {
-            float distanceToEnd=Vector3.Distance(this.end.transform.position,this.player.transform.position);
-            float scaleMultiplier = distanceToEnd / this.tunnelDistance;
-            scaleMultiplier = initialScale-(this.initialScale / scaleDifference) - scaleMultiplier;
-            this.player.GetComponent<MyController>().setNewScale(scaleMultiplier);
+            float scaleMultiplier;
+            if (startEntry)
+            {
+                float distanceToEnd = Vector3.Distance(this.end.transform.position, this.player.transform.position);
+                scaleMultiplier = distanceToEnd / this.tunnelDistance;
+                this.player.GetComponent<MyController>().setNewScale(Mathf.Lerp(this.initialScale/this.startByEndScale,this.initialScale,scaleMultiplier));
+            }
+            else
+            {
+                float distanceToStart = Vector3.Distance(this.start.transform.position,this.player.transform.position);
+                scaleMultiplier = distanceToStart / this.tunnelDistance;
+                this.player.GetComponent<MyController>().setNewScale(Mathf.Lerp(this.initialScale, this.initialScale*this.startByEndScale,1-scaleMultiplier));
+            }
+            
         }
     }
-
     public void setInside(bool isStart)
     {
         if (!inside)
         {
             this.inside = true;
             this.initialScale = this.player.transform.localScale.y;
+            this.startEntry = isStart;
         }
         else
         {
