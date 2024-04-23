@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.AssetImporters;
 using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
