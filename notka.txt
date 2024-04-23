@@ -4,3 +4,11 @@ niby rozwiązane to, ale
 chyba pomoże jeżeli to będzie tylko fragment większego tunelu
 niespecjalnie to pomaga, ale to tak to można o tym wspomnieć 
 to zdecydowanie pomaga!
+
+Pomijąć to jest jeszcze lista rzeczy do zrobienia:
+-ogarnąć shader portalu w grafie 
+-zrobić przycisk
+-ogarnąć te zmiany lightmap
+-ogarnać robienie cieni za pomocą kopii obiektu i dynamicznemu oświetleniu
+-zrobić poziomy docelowe
+-napisać pracę
