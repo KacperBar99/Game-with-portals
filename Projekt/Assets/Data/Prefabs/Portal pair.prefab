@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 3190947227331917596}
+  wrapper: {fileID: 0}
+  isDisablingOffset: 0
 --- !u!114 &517514951135609019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraToDisable: {fileID: 8155570878684389994}
+  showdot: 0
 --- !u!1 &2044627665181505637
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +277,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f627d2da6f237794eb49a9d985b0cc15, type: 2}
+  - {fileID: 2100000, guid: b2a7842ce59b82d49aaf23b587292867, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -357,7 +360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f627d2da6f237794eb49a9d985b0cc15, type: 2}
+  - {fileID: 2100000, guid: b2a7842ce59b82d49aaf23b587292867, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -479,6 +482,8 @@ MonoBehaviour:
   copyCamera: 1
   cullingSkip: IgnoreCamera2
   renderPlane: {fileID: 3449721063474166521}
+  CameraOffset: {x: 0, y: 0, z: 0}
+  useOffset: 0
   portal: {fileID: 666258050162717046}
   Bportal: {fileID: 7815189883926882422}
 --- !u!114 &1195808412660785214
@@ -625,6 +630,8 @@ MonoBehaviour:
   copyCamera: 1
   cullingSkip: IgnoreCamera
   renderPlane: {fileID: 4801500600639909874}
+  CameraOffset: {x: 0, y: 0, z: 0}
+  useOffset: 0
   portal: {fileID: 7815189883926882422}
   Bportal: {fileID: 666258050162717046}
 --- !u!114 &8582596988521874863
@@ -772,6 +779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receiver: {fileID: 2667812671642142614}
+  wrapper: {fileID: 0}
+  isDisablingOffset: 0
 --- !u!114 &1689224668162802996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,3 +794,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraToDisable: {fileID: 3714775032778868017}
+  showdot: 0

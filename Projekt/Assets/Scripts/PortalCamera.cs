@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.AssetImporters;
 using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
@@ -10,7 +11,7 @@ public class PortalCamera : MonoBehaviour
     [SerializeField,Tooltip("Which culling layer should not be visible to this camera.")]
     private string cullingSkip;
     [SerializeField]
-    private Renderer renderPlane;
+    private MeshRenderer renderPlane;
 
     [SerializeField]
     private Vector3 CameraOffset;
@@ -39,7 +40,7 @@ public class PortalCamera : MonoBehaviour
     private void Start()
     {
         objectCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        renderPlane.material.mainTexture=objectCamera.targetTexture;
+        renderPlane.material.SetTexture("_Texture", objectCamera.targetTexture);
     }
 
 

@@ -6,8 +6,8 @@ niespecjalnie to pomaga, ale to tak to można o tym wspomnieć
 to zdecydowanie pomaga!
 
 Pomijąć to jest jeszcze lista rzeczy do zrobienia:
--ogarnąć shader portalu w grafie 
--zrobić przycisk
+-ogarnąć shader portalu w grafie | zrobione
+-zrobić przycisk tak by się klikał i animował i był jakiś komunikat na ekranie by gracz wiedział, że może sobie kliknąć 
 -ogarnąć te zmiany lightmap
 -ogarnać robienie cieni za pomocą kopii obiektu i dynamicznemu oświetleniu
 -zrobić poziomy docelowe
