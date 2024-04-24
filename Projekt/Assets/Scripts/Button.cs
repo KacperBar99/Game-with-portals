@@ -5,9 +5,17 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     [SerializeField]
+    private GameObject sentClick;
+    [SerializeField]
     private Animator animator;
+
+
     private GameObject Icon;
     private bool playerIn = false;
+    private Transform player;
+    private Camera mainCamera;
+    private Plane[] cameraFrustum;
+    private Bounds bounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +29,9 @@ public class Button : MonoBehaviour
             }
         }
         this.Icon.gameObject.SetActive(false);
+        this.player = GameObject.FindGameObjectWithTag("Player").transform;
+        mainCamera = Camera.main;
+        bounds = GetComponent<Collider>().bounds;
     }
 
     // Update is called once per frame
@@ -28,20 +39,42 @@ public class Button : MonoBehaviour
     {
         if (playerIn)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            Vector3 buttonToPlayer = player.position - transform.position;
+            float dotProduct = Vector3.Dot(transform.up, buttonToPlayer);
+
+            
+            if(dotProduct < 0)
             {
-                animator.SetTrigger("Press");
+                if (this.Icon.activeSelf)
+                {
+                    this.Icon.SetActive(false);
+                }
+            }else
+            {
+                cameraFrustum = GeometryUtility.CalculateFrustumPlanes(this.mainCamera);
+                if(!this.Icon.activeSelf && GeometryUtility.TestPlanesAABB(this.cameraFrustum,this.bounds)) 
+                {
+                    this.Icon.SetActive(true);
+                }else if (this.Icon.activeSelf && !GeometryUtility.TestPlanesAABB(this.cameraFrustum,this.bounds)) 
+                {
+                    this.Icon.SetActive(false);
+                }
             }
+            
+        }
+        if (Input.GetKeyDown(KeyCode.E) && this.Icon.activeSelf)
+        {
+            animator.SetTrigger("Press");
+            this.sentClick.GetComponent<Wall>().changeState();
         }
     }
     private void OnTriggerEnter(Collider other)
-    {
-        this.Icon?.SetActive(true);
+    {     
         this.playerIn = true;
     }
     private void OnTriggerExit(Collider other)
-    {
-        this.Icon?.SetActive(false);
+    { 
         this.playerIn = false;
+        this.Icon.SetActive(false);
     }
 }

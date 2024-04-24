@@ -34,8 +34,6 @@ public class TunnelPortal : MonoBehaviour
     private bool reverseTunnelOrientation=false;
 
 
-    private float entryScale;
-    private float exitScale;
     private Transform player;
 
 

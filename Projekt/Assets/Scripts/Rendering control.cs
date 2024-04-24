@@ -14,7 +14,6 @@ public class Renderingcontrol : MonoBehaviour
     private Bounds bounds;
 
 
-    public bool showdot=false;
 
 
     private void Awake()
@@ -35,9 +34,8 @@ public class Renderingcontrol : MonoBehaviour
         Vector3 portalToPlayer = player.position - transform.position;
         float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
-        cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+       
 
-        if(showdot)Debug.Log(dotProduct);
         if (dotProduct < 0)
         {
             if (cameraToDisable.enabled)
@@ -47,6 +45,8 @@ public class Renderingcontrol : MonoBehaviour
         }
         else
         {
+            cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+
             if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
             {
                 cameraToDisable.enabled = true;
