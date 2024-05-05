@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Renderingcontrol : MonoBehaviour
 {
-
-    private Transform player;
-    [SerializeField,Tooltip("Camera that will be disabled")]
+    public Renderer plane;
+    [SerializeField, Tooltip("Camera that will be disabled")]
     private Camera cameraToDisable;
+    private Transform player;
     private Camera mainCamera;
     private Plane[] cameraFrustum;
     private Bounds bounds;
@@ -47,11 +47,11 @@ public class Renderingcontrol : MonoBehaviour
         {
             cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
 
-            if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+            if (!cameraToDisable.enabled && plane.isVisible)
             {
                 cameraToDisable.enabled = true;
             }
-            else if (cameraToDisable.enabled && !GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+            else if (cameraToDisable.enabled && !plane.isVisible)
             {
                 cameraToDisable.enabled = false;
             }
