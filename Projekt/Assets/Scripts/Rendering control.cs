@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Renderingcontrol : MonoBehaviour
 {
-    public Renderer plane;
     [SerializeField, Tooltip("Camera that will be disabled")]
     private Camera cameraToDisable;
     private Transform player;
@@ -47,14 +46,20 @@ public class Renderingcontrol : MonoBehaviour
         {
             cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
 
-            if (!cameraToDisable.enabled && plane.isVisible)
+            if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
             {
                 cameraToDisable.enabled = true;
             }
-            else if (cameraToDisable.enabled && !plane.isVisible)
+            else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, bounds) || this.isAboveOrBelow()))
             {
                 cameraToDisable.enabled = false;
             }
         }
+    }
+
+    private bool isAboveOrBelow()
+    {
+        if (Mathf.Abs(this.transform.position.y - this.player.position.y) >= 50) return true;
+        else return false;
     }
 }
