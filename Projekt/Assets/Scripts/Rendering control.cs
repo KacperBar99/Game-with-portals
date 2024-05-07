@@ -47,19 +47,14 @@ public class Renderingcontrol : MonoBehaviour
         {
             cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
 
-            if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+            if (!cameraToDisable.enabled && plane.isVisible)
             {
                 cameraToDisable.enabled = true;
             }
-            else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, bounds) || this.isAboveOrBelow()))
+            else if (cameraToDisable.enabled && !plane.isVisible)
             {
                 cameraToDisable.enabled = false;
             }
         }
-    }
-    private bool isAboveOrBelow()
-    {
-        if (Mathf.Abs(this.transform.position.y - this.player.position.y) >= 50) return true;
-        else return false;
     }
 }

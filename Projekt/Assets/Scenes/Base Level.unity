@@ -2048,7 +2048,7 @@ GameObject:
   - component: {fileID: 519480958}
   - component: {fileID: 519480957}
   - component: {fileID: 519480956}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: Cube(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8500,7 +8500,7 @@ GameObject:
   - component: {fileID: 975800788}
   - component: {fileID: 975800787}
   - component: {fileID: 975800786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9280,7 +9280,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 25
+  m_Intensity: 10
   m_Range: 25
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9319,10 +9319,10 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0.5
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 2.2986114e+20, y: 6e-44, z: 1.5e-44, w: 1.217e-41}
@@ -10031,14 +10031,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922095691}
     m_Modifications:
-    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.data[0]
-      value: IgnoreCamera
-      objectReference: {fileID: 0}
     - target: {fileID: 517514951135609019, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: plane
       value: 
@@ -10050,10 +10042,6 @@ PrefabInstance:
     - target: {fileID: 666258050162717046, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_LocalPosition.z
       value: 12.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1195808412660785214, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689224668162802996, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: plane
@@ -10105,15 +10093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: cullingSkip
-      value: IgnoreCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.data[0]
-      value: IgnoreCamera
+      value: IgnoreCamera4
       objectReference: {fileID: 0}
     - target: {fileID: 6646677300477929167, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10137,7 +10117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -69.4
+      value: -53.4
       objectReference: {fileID: 0}
     - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10150,10 +10130,6 @@ PrefabInstance:
     - target: {fileID: 8337823559815749742, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_Name
       value: ToTestRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582596988521874863, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11104,12 +11080,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!23 &1563025146 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3449721063474166521, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
@@ -11234,12 +11210,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1737910958
 GameObject:
   m_ObjectHideFlags: 0
@@ -16909,7 +16885,7 @@ Transform:
   m_GameObject: {fileID: 1781545884}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -50, z: -24}
+  m_LocalPosition: {x: 5, y: -34, z: -24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23486,7 +23462,7 @@ PrefabInstance:
       objectReference: {fileID: 330780690}
     - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: cullingSkip
-      value: IgnoreCamera4
+      value: IgnoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: playerCamera
@@ -23500,18 +23476,6 @@ PrefabInstance:
       propertyPath: points.Array.data[0]
       value: 
       objectReference: {fileID: 330780690}
-    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.data[0]
-      value: IgnoreCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.data[1]
-      value: IgnoreCamera4
-      objectReference: {fileID: 0}
     - target: {fileID: 517514951135609019, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: plane
       value: 
@@ -23684,14 +23648,6 @@ PrefabInstance:
       propertyPath: cullingSkip.Array.size
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
-      propertyPath: cullingSkips.Array.data[0]
-      value: IgnoreCamera2
-      objectReference: {fileID: 0}
     - target: {fileID: 5466571314464073707, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -23806,15 +23762,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4417087733034451776, guid: abe6459bbf25b374abb101a8abe6ea79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18.477934
       objectReference: {fileID: 0}
     - target: {fileID: 4417087733034451776, guid: abe6459bbf25b374abb101a8abe6ea79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 19.755745
       objectReference: {fileID: 0}
     - target: {fileID: 4417087733034451776, guid: abe6459bbf25b374abb101a8abe6ea79, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 13.781571
       objectReference: {fileID: 0}
     - target: {fileID: 4417087733034451776, guid: abe6459bbf25b374abb101a8abe6ea79, type: 3}
       propertyPath: m_LocalRotation.w
