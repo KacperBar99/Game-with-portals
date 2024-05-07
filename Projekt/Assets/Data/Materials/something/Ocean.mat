@@ -151,11 +151,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Darker_Water: {r: 0.27394092, g: 0.42469764, b: 0.7169812, a: 1}
+    - _Darker_Water: {r: 0, g: 0.3362832, b: 1, a: 1}
     - _Deep_Water: {r: 0, g: 0.22268263, b: 0.66456807, a: 0.85882354}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Foam_Color: {r: 1024, g: 1024, b: 1024, a: 1}
-    - _Lighter_Water: {r: 0.12375401, g: 0.43281776, b: 0.9716981, a: 1}
+    - _Lighter_Water: {r: 0.5235849, g: 0.69154596, b: 1, a: 1}
     - _Shallow_Water: {r: 3.028747, g: 3.8574412, b: 7.924529, a: 0.3137255}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _faom_color: {r: 7.7747464, g: 0, b: 0, a: 1}
