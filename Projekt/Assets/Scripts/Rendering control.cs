@@ -34,9 +34,7 @@ public class Renderingcontrol : MonoBehaviour
         Vector3 portalToPlayer = player.position - transform.position;
         float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
-       
-
-        if (dotProduct < 0)
+        if (dotProduct < 0 || this.isAboveOrBelow())
         {
             if (cameraToDisable.enabled)
             {
@@ -47,14 +45,19 @@ public class Renderingcontrol : MonoBehaviour
         {
             cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
 
-            if (!cameraToDisable.enabled && plane.isVisible)
+            if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
             {
                 cameraToDisable.enabled = true;
             }
-            else if (cameraToDisable.enabled && !plane.isVisible)
+            else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, bounds)))
             {
                 cameraToDisable.enabled = false;
             }
         }
+    }
+    private bool isAboveOrBelow()
+    {
+        if (Mathf.Abs(this.transform.position.y - this.player.position.y) >= 50) return true;
+        else return false;
     }
 }

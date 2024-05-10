@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 1024
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10331183, g: 0.17352912, b: 0.30339792, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2048,7 +2048,7 @@ GameObject:
   - component: {fileID: 519480958}
   - component: {fileID: 519480957}
   - component: {fileID: 519480956}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Cube(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8500,7 +8500,7 @@ GameObject:
   - component: {fileID: 975800788}
   - component: {fileID: 975800787}
   - component: {fileID: 975800786}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Wall C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9913,6 +9913,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922095691}
     m_Modifications:
+    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.data[0]
+      value: IgnoreCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 517514951135609019, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: plane
       value: 
@@ -9970,12 +9978,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: cullingSkip
       value: IgnoreCamera4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.data[0]
+      value: IgnoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 6646677300477929167, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10004,6 +10036,22 @@ PrefabInstance:
     - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_LocalPosition.z
       value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -11217,7 +11265,7 @@ GameObject:
   - component: {fileID: 1737910962}
   - component: {fileID: 1737910961}
   - component: {fileID: 1737910960}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12768,7 +12816,7 @@ Transform:
   m_GameObject: {fileID: 1779140155}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5, y: -3.5, z: -11}
+  m_LocalPosition: {x: 11.5, y: -1, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12851,7 +12899,7 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0.5
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -17040,6 +17088,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 138446718144863995, guid: 54416732082a29d4d98a92a02d85f934, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138446718144863995, guid: 54416732082a29d4d98a92a02d85f934, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138446718144863995, guid: 54416732082a29d4d98a92a02d85f934, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138446718144863995, guid: 54416732082a29d4d98a92a02d85f934, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 644703361348901504, guid: 54416732082a29d4d98a92a02d85f934, type: 3}
       propertyPath: m_Antialiasing
       value: 0
@@ -22613,7 +22677,7 @@ Light:
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 2
+  m_BounceIntensity: 5
   m_ColorTemperature: 4922
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: -1, y: 9, z: 10, w: -10}
@@ -23582,6 +23646,18 @@ PrefabInstance:
       propertyPath: points.Array.data[0]
       value: 
       objectReference: {fileID: 330780690}
+    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.data[0]
+      value: IgnoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.data[1]
+      value: IgnoreCamera3
+      objectReference: {fileID: 0}
     - target: {fileID: 517514951135609019, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: plane
       value: 
@@ -23695,6 +23771,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714775032778868017, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
@@ -23752,7 +23844,11 @@ PrefabInstance:
       objectReference: {fileID: 971558614}
     - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: cullingSkip.Array.size
-      value: 13
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: cullingSkip.Array.data[0]
+      value: IgnoreCamera2
       objectReference: {fileID: 0}
     - target: {fileID: 5466571314464073707, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -23813,6 +23909,22 @@ PrefabInstance:
     - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_TargetTexture
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155570878684389994, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8337823559815749742, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_Name
@@ -23919,13 +24031,13 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 922095691}
+  - {fileID: 1938792732}
+  - {fileID: 1865921612}
+  - {fileID: 1556685566200907006}
   - {fileID: 2048141749}
   - {fileID: 1464827278}
-  - {fileID: 1938792732}
-  - {fileID: 1556685566200907006}
-  - {fileID: 1865921612}
   - {fileID: 2031903631}
-  - {fileID: 922095691}
   - {fileID: 671189177}
   - {fileID: 1811730242}
   - {fileID: 2006482080}

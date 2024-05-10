@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    public Transform receiver;
-    public PortalWrapper wrapper;
+    [SerializeField]
+    private bool isDisablingOffset;
+
+    [SerializeField]
+    private Transform receiver;
+    [SerializeField]
+    private PortalWrapper wrapper;
 
 
     private Transform player;
     private bool playerIsOverlapping = false;
-
-    
 
     private void Awake()
     {
@@ -19,22 +22,18 @@ public class Portal : MonoBehaviour
         
     }
 
-    [SerializeField]
-    private bool isDisablingOffset;
-
     private void LateUpdate()
     {
-        Vector3 portalToPlayer = player.position - transform.position;
-        float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
-
-
         if (this.playerIsOverlapping)
         {
-            if(dotProduct < 0f)
+            Vector3 portalToPlayer = this.player.position - this.transform.position;
+            float dotProduct = Vector3.Dot(this.transform.up, portalToPlayer);
+
+            if (dotProduct < 0f)
             {
-                float rotationDiff = -Quaternion.Angle(transform.rotation, receiver.rotation);
+                float rotationDiff = -Quaternion.Angle(this.transform.rotation, this.receiver.rotation);
                 rotationDiff += 180;
-                player.Rotate(Vector3.up, rotationDiff);
+                this.player.Rotate(Vector3.up, rotationDiff);
                 var pl = player.GetComponent<CharacterController>();
                 pl.enabled = false;
                 Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;

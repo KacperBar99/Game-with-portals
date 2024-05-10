@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
@@ -5,10 +6,9 @@ public class PortalCamera : MonoBehaviour
     [SerializeField,Tooltip("Setting to copy main Camera setting instead of using already set ones.")]
     private bool copyCamera;
     [SerializeField,Tooltip("Which culling layer should not be visible to this camera.")]
-    private string cullingSkip;
+    private List<string> cullingSkip;
     [SerializeField]
     private MeshRenderer renderPlane;
-
     [SerializeField]
     private Vector3 CameraOffset;
     [SerializeField]
@@ -28,7 +28,10 @@ public class PortalCamera : MonoBehaviour
         if (copyCamera && objectCamera != null)
         {
             this.objectCamera.CopyFrom(Camera.main);
-            this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(cullingSkip));
+            foreach(string skip in cullingSkip)
+            {
+                this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(skip));
+            }
             this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer("UI"));
         }
     }
