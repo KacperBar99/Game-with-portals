@@ -8508,7 +8508,7 @@ GameObject:
   - component: {fileID: 975800788}
   - component: {fileID: 975800787}
   - component: {fileID: 975800786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23627,6 +23627,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480841700254357713, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 330780690}
@@ -23823,6 +23827,10 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341310060688122104, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 971558614}
@@ -23881,6 +23889,26 @@ PrefabInstance:
     - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815189883926882422, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 7886603293190038191, guid: a7c9af84f8e42f04fb4ea8f2c1f54583, type: 3}
       propertyPath: m_StaticEditorFlags

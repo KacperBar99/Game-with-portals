@@ -45,24 +45,21 @@ public class PortalCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector3 playerOffsetFromPortal = playerCamera.position - Bportal.position;
-        if (useOffset)
-        {
-            this.transform.position = CameraOffset+portal.position+playerOffsetFromPortal;
-        }
-        else
-        {
-            transform.position = portal.position + playerOffsetFromPortal;
-        }
-        
-
-       
-
-        float angularDifference = Quaternion.Angle(portal.rotation, Bportal.rotation);
+        float angularDifference = -Vector3.SignedAngle(this.portal.forward,this.Bportal.forward,this.transform.up);
 
         Quaternion portalRotation = Quaternion.AngleAxis(angularDifference, Vector3.up);
         Vector3 newCameraDirection = portalRotation * playerCamera.forward;
-        transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+        this.transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+
+        Vector3 playerOffsetFromPortal = playerCamera.position - Bportal.position;
+        if (useOffset)
+        {
+            this.transform.position = this.CameraOffset + this.portal.position + playerOffsetFromPortal;
+        }
+        else
+        {
+            transform.position = this.portal.position + Quaternion.Euler(0f, angularDifference, 0f) * playerOffsetFromPortal;
+        }
     }
 
     public void setOffset(Vector3 offset)
