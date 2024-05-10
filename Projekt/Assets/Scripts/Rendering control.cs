@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Renderingcontrol : MonoBehaviour
 {
-    public Renderer plane;
     [SerializeField, Tooltip("Camera that will be disabled")]
     private Camera cameraToDisable;
+    [SerializeField]
+    private Renderer planeToDisable;
     private Transform player;
     private Camera mainCamera;
     private Plane[] cameraFrustum;
@@ -25,7 +26,6 @@ public class Renderingcontrol : MonoBehaviour
     {
         mainCamera = Camera.main;
         bounds = GetComponent<Collider>().bounds;
-        cameraToDisable.enabled = false;
     }
 
     // Update is called once per frame
@@ -38,7 +38,8 @@ public class Renderingcontrol : MonoBehaviour
         {
             if (cameraToDisable.enabled)
             {
-                cameraToDisable.enabled = false;
+                this.cameraToDisable.enabled = false;
+                this.planeToDisable.enabled = false;
             }
         }
         else
@@ -47,11 +48,13 @@ public class Renderingcontrol : MonoBehaviour
 
             if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
             {
-                cameraToDisable.enabled = true;
+                this.cameraToDisable.enabled = true;
+                this.planeToDisable.enabled = true;
             }
             else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, bounds)))
             {
-                cameraToDisable.enabled = false;
+                this.cameraToDisable.enabled = false;
+                this.planeToDisable.enabled = false;
             }
         }
     }

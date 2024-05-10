@@ -164,9 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b92b065bb49ef4cb4ec98c506784ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisablingOffset: 0
   receiver: {fileID: 3190947227331917596}
   wrapper: {fileID: 0}
-  isDisablingOffset: 0
 --- !u!114 &517514951135609019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plane: {fileID: 0}
   cameraToDisable: {fileID: 8155570878684389994}
+  planeToDisable: {fileID: 3449721063474166521}
 --- !u!1 &2044627665181505637
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   copyCamera: 1
-  cullingSkip: IgnoreCamera2
+  cullingSkip: []
   renderPlane: {fileID: 3449721063474166521}
   CameraOffset: {x: 0, y: 0, z: 0}
   useOffset: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   copyCamera: 1
-  cullingSkip: IgnoreCamera
+  cullingSkip: []
   renderPlane: {fileID: 4801500600639909874}
   CameraOffset: {x: 0, y: 0, z: 0}
   useOffset: 0
@@ -778,9 +778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b92b065bb49ef4cb4ec98c506784ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisablingOffset: 0
   receiver: {fileID: 2667812671642142614}
   wrapper: {fileID: 0}
-  isDisablingOffset: 0
 --- !u!114 &1689224668162802996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,5 +793,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ba74a7194c6b644b8cca7a4cb1f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plane: {fileID: 0}
   cameraToDisable: {fileID: 3714775032778868017}
+  planeToDisable: {fileID: 4801500600639909874}
