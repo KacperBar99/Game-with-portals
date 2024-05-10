@@ -7,8 +7,6 @@ public class Renderingcontrol : MonoBehaviour
 {
     [SerializeField, Tooltip("Camera that will be disabled")]
     private Camera cameraToDisable;
-    [SerializeField]
-    private Renderer planeToDisable;
     private Transform player;
     private Camera mainCamera;
     private Plane[] cameraFrustum;
@@ -39,7 +37,6 @@ public class Renderingcontrol : MonoBehaviour
             if (cameraToDisable.enabled)
             {
                 this.cameraToDisable.enabled = false;
-                this.planeToDisable.enabled = false;
             }
         }
         else
@@ -49,12 +46,10 @@ public class Renderingcontrol : MonoBehaviour
             if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
             {
                 this.cameraToDisable.enabled = true;
-                this.planeToDisable.enabled = true;
             }
             else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, bounds)))
             {
                 this.cameraToDisable.enabled = false;
-                this.planeToDisable.enabled = false;
             }
         }
     }
