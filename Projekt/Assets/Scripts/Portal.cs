@@ -32,7 +32,7 @@ public class Portal : MonoBehaviour
         Vector3 portalToPlayer = this.player.position - this.transform.position;
         float dotProduct = Vector3.Dot(this.transform.up, portalToPlayer);
 
-        if (this.playerIsOverlapping && dotProduct < 0f && lastDotProduct > 0)
+        if (this.playerIsOverlapping && dotProduct < 0f && lastDotProduct >= 0)
         {
             var pl = player.GetComponent<CharacterController>();
             pl.enabled = false;
@@ -42,7 +42,7 @@ public class Portal : MonoBehaviour
             player.position = receiver.position + positionOffset;
             pl.enabled = true;
             playerIsOverlapping = false;
-
+             
             if (this.wrapper != null)
                 this.wrapper.setEvent(isDisablingOffset);
         }
