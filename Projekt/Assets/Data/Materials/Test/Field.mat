@@ -108,14 +108,14 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fill: -0.2
-    - _Fresnel: 7.41
+    - _Fill: -0.92
+    - _Fresnel: 2.73
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Offset: -0.5
+    - _Offset: -0.01
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
