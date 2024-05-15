@@ -306,9 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b92b065bb49ef4cb4ec98c506784ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisablingOffset: 0
   receiver: {fileID: 1004704920357233633}
   wrapper: {fileID: 2329012408748448874}
-  isDisablingOffset: 0
 --- !u!1 &4363597214146160000
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,9 +375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b92b065bb49ef4cb4ec98c506784ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisablingOffset: 1
   receiver: {fileID: 354166034380432799}
   wrapper: {fileID: 3735211152443533946}
-  isDisablingOffset: 1
 --- !u!1 &4460272627957394584
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,8 +526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0da7be520c3fc34ca5002dd47ff8363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copyCamera: 1
-  cullingSkip: IgnoreCamera2
+  setCamera: 1
+  cullingSkip: []
   renderPlane: {fileID: 1037577590108810756}
   CameraOffset: {x: 0, y: 0, z: 0}
   useOffset: 0
@@ -571,12 +571,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &5030540925288804396
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,8 +674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0da7be520c3fc34ca5002dd47ff8363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copyCamera: 1
-  cullingSkip: IgnoreCamera
+  setCamera: 1
+  cullingSkip: []
   renderPlane: {fileID: 7638279662209383793}
   CameraOffset: {x: 0, y: 0, z: 0}
   useOffset: 0
@@ -719,12 +719,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &5208525310127787290
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,8 +822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0da7be520c3fc34ca5002dd47ff8363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copyCamera: 1
-  cullingSkip: IgnoreCamera2
+  setCamera: 1
+  cullingSkip: []
   renderPlane: {fileID: 539616937230772346}
   CameraOffset: {x: 0, y: 0, z: 0}
   useOffset: 0
@@ -867,12 +867,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &5533586650163885650
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,8 +970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0da7be520c3fc34ca5002dd47ff8363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copyCamera: 1
-  cullingSkip: IgnoreCamera
+  setCamera: 1
+  cullingSkip: []
   renderPlane: {fileID: 7141498510564621071}
   CameraOffset: {x: 0, y: 0, z: 0}
   useOffset: 0
@@ -1015,12 +1015,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &6195211492975473953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,9 +1087,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b92b065bb49ef4cb4ec98c506784ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisablingOffset: 1
   receiver: {fileID: 341166539486794603}
   wrapper: {fileID: 7554760031091112324}
-  isDisablingOffset: 1
 --- !u!1 &6693191184334173023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,9 +1156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b92b065bb49ef4cb4ec98c506784ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisablingOffset: 0
   receiver: {fileID: 983821856323130645}
   wrapper: {fileID: 5068996601275808988}
-  isDisablingOffset: 0
 --- !u!1 &7169708740174378344
 GameObject:
   m_ObjectHideFlags: 0

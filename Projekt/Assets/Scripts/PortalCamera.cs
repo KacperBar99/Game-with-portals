@@ -4,7 +4,7 @@ using UnityEngine;
 public class PortalCamera : MonoBehaviour
 {
     [SerializeField,Tooltip("Setting to copy main Camera setting instead of using already set ones.")]
-    private bool copyCamera;
+    private bool setCamera=true;
     [SerializeField,Tooltip("Which culling layer should not be visible to this camera.")]
     private List<string> cullingSkip;
     [SerializeField]
@@ -20,24 +20,21 @@ public class PortalCamera : MonoBehaviour
     public Transform portal;
     public Transform Bportal;
 
-    private void Awake()
+    private void Start()
     {
         this.playerCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         objectCamera = GetComponent<Camera>();
-        
-        if (copyCamera && objectCamera != null)
+
+        if (setCamera && objectCamera != null)
         {
             this.objectCamera.CopyFrom(Camera.main);
-            foreach(string skip in cullingSkip)
+            foreach (string skip in cullingSkip)
             {
                 this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(skip));
             }
             this.objectCamera.cullingMask &= ~(1 << LayerMask.NameToLayer("UI"));
         }
-    }
 
-    private void Start()
-    {
         objectCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
         renderPlane.material.SetTexture("_Texture", objectCamera.targetTexture);
     }
@@ -52,13 +49,11 @@ public class PortalCamera : MonoBehaviour
         this.transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
 
         Vector3 playerOffsetFromPortal = playerCamera.position - Bportal.position;
+        transform.position = this.portal.position + Quaternion.Euler(0f, angularDifference, 0f) * playerOffsetFromPortal;
+
         if (useOffset)
         {
-            this.transform.position = this.CameraOffset + this.portal.position + playerOffsetFromPortal;
-        }
-        else
-        {
-            transform.position = this.portal.position + Quaternion.Euler(0f, angularDifference, 0f) * playerOffsetFromPortal;
+            transform.position += this.CameraOffset;
         }
     }
 

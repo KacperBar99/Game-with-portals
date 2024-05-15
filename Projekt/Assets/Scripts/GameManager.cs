@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UnityEditor.EditorPrefs.SetBool("DeveloperMode", false);
         if (maxFPS)
         {
             Application.targetFrameRate = -1;
