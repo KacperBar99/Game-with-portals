@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RenderingControl : MonoBehaviour
 {
+    [SerializeField, Tooltip("If player vertical position difference to portal is above that, portal will not render.")]
+    private float HeightDiffernceThreshold = 50.0f;
     [SerializeField, Tooltip("Camera that will be disabled")]
     private Camera cameraToDisable;
     private Transform player;
@@ -29,7 +31,7 @@ public class RenderingControl : MonoBehaviour
 
         if (dotProduct < 0 || this.isAboveOrBelow())
         {
-            if (cameraToDisable.enabled)
+            if (this.cameraToDisable.enabled)
             {
                 this.cameraToDisable.enabled = false;
             }
@@ -38,11 +40,11 @@ public class RenderingControl : MonoBehaviour
         {
             cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
 
-            if (!cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+            if (!this.cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, this.bounds))
             {
                 this.cameraToDisable.enabled = true;
             }
-            else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, bounds)))
+            else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, this.bounds)))
             {
                 this.cameraToDisable.enabled = false;
             }
@@ -50,7 +52,7 @@ public class RenderingControl : MonoBehaviour
     }
     private bool isAboveOrBelow()
     {
-        if (Mathf.Abs(this.transform.position.y - this.player.position.y) >= 50) return true;
+        if (Mathf.Abs(this.transform.position.y - this.player.position.y) >= this.HeightDiffernceThreshold) return true;
         else return false;
     }
 }
