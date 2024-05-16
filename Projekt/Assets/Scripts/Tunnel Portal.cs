@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class TunnelPortal : MonoBehaviour
 {
-    private enum direction
-    {
-        x=0, y=1, z=2
-    }
-
-    private Camera mainCamera;
-    private Plane[] cameraFrustum;
-    private Bounds[] bounds;
-
     [SerializeField]
     private PortalWrapper tunnelA;
     [SerializeField]
@@ -21,27 +12,21 @@ public class TunnelPortal : MonoBehaviour
     private PortalWrapper fakeA;
     [SerializeField]
     private PortalWrapper fakeB;
-
     [SerializeField]
     private Transform fake;
     [SerializeField]
     private Transform real;
-
     [SerializeField]
-    private direction orientation;
-
-    [SerializeField]
-    private bool reverseTunnelOrientation=false;
-
+    private bool alternativeOffset=false;
 
     private Transform player;
-
-
-    private float distanceReal;
-    private float distanceFake;
+    private Camera mainCamera;
+    private Plane[] cameraFrustum;
+    private Bounds[] bounds;
+    private Vector3 distanceReal;
+    private Vector3 distanceFake;
 
     private bool inside = false;
-
 
     private void Awake()
     {
@@ -63,31 +48,15 @@ public class TunnelPortal : MonoBehaviour
 
         Vector3 differenceA = this.fake.position - this.real.position;
         Vector3 differenceB = differenceA;
-        this.distanceReal = Vector3.Distance(this.tunnelA.transform.position, this.tunnelB.transform.position);
-        this.distanceFake = Vector3.Distance(this.fakeA.transform.position, this.fakeB.transform.position);
-        float lengthDifference = Mathf.Abs(distanceReal - distanceFake)/2.0f;
-        switch (orientation)
-        {
-            case direction.x:
-                {
-                    differenceA.x += lengthDifference;
-                    differenceB.x -= lengthDifference;
-                    break;
-                }
-            case direction.y:
-                {
-                    differenceA.y += lengthDifference;
-                    differenceB.y -= lengthDifference;
-                    break;
-                }
-            case direction.z:
-                {
-                    differenceA.z += lengthDifference;
-                    differenceB.z -= lengthDifference;
-                    break;
-                }
-        }
-        if (reverseTunnelOrientation)
+
+        this.distanceReal = this.tunnelB.transform.position - this.tunnelA.transform.position;
+        this.distanceFake = this.fakeB.transform.position - this.fakeA.transform.position;
+        Vector3 difference = (this.distanceReal - this.distanceFake)/2.0f;
+
+        differenceA += difference;
+        differenceB -= difference;
+
+        if (alternativeOffset)
         {
             this.tunnelB.setOffset(differenceA);
             this.tunnelA.setOffset(differenceB);
@@ -97,10 +66,6 @@ public class TunnelPortal : MonoBehaviour
             this.tunnelB.setOffset(differenceB);
             this.tunnelA.setOffset(differenceA);
         }
-
-
-
-
     }
 
     private void LateUpdate()

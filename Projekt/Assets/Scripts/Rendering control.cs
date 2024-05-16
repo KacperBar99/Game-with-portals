@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Renderingcontrol : MonoBehaviour
+public class RenderingControl : MonoBehaviour
 {
     [SerializeField, Tooltip("Camera that will be disabled")]
     private Camera cameraToDisable;
@@ -13,15 +13,10 @@ public class Renderingcontrol : MonoBehaviour
     private Bounds bounds;
 
 
-
-
-    private void Awake()
-    {
-        this.player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
     // Start is called before the first frame update
     void Start()
     {
+        this.player = GameObject.FindGameObjectWithTag("Player").transform;
         mainCamera = Camera.main;
         bounds = GetComponent<Collider>().bounds;
     }
