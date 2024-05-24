@@ -18,6 +18,8 @@ public class TunnelPortal : MonoBehaviour
     private Transform real;
     [SerializeField]
     private bool alternativeOffset=false;
+    [SerializeField, Tooltip("If player vertical position difference to portal is above that, portal will not render.")]
+    private float HeightDiffernceThreshold = 50.0f;
 
     private Transform player;
     private Camera mainCamera;
@@ -75,13 +77,11 @@ public class TunnelPortal : MonoBehaviour
         cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
         if (inside)
         {
-            
-
             //fake A
             portalToPlayer = player.position - fakeA.transform.position;
             dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
-            if (dotProduct < 0)
+            if (dotProduct < 0 || this.isAboveOrBelow())
             {
                 if (tunnelA.getCameraStatus())
                 {
@@ -99,12 +99,11 @@ public class TunnelPortal : MonoBehaviour
                 }
             }
 
-
             //fake B
             portalToPlayer = player.position - fakeB.transform.position;
             dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
-            if (dotProduct < 0)
+            if (dotProduct < 0 || this.isAboveOrBelow())
             {
                 if (tunnelB.getCameraStatus())
                 {
@@ -126,13 +125,11 @@ public class TunnelPortal : MonoBehaviour
         else
         {
             //outside
-
-
             //tunnel A
 
             portalToPlayer = player.position - tunnelA.getPosition();
             dotProduct = Vector3.Dot(this.tunnelA.getLocalUp(), portalToPlayer);
-            if (dotProduct < 0)
+            if (dotProduct < 0 || this.isAboveOrBelow())
             {
                this.tunnelB.setCameraStatus(false);
                this.fakeA.setCameraStatus(false);
@@ -142,7 +139,7 @@ public class TunnelPortal : MonoBehaviour
                 if (!fakeA.getCameraStatus() && GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[0]))
                 {
                     this.tunnelB.setCameraStatus(true);
-                    fakeA.setCameraStatus(true);
+                    this.fakeA.setCameraStatus(true);
                 }
                 else if (fakeA.getCameraStatus() && !GeometryUtility.TestPlanesAABB(cameraFrustum, bounds[0]))
                 {
@@ -150,14 +147,10 @@ public class TunnelPortal : MonoBehaviour
                     this.fakeA.setCameraStatus(false);
                 }
             }
-
-
-
-
             //tunnelB
             portalToPlayer = player.position - tunnelB.getPosition();
             dotProduct = Vector3.Dot(this.tunnelB.getLocalUp(), portalToPlayer);
-            if (dotProduct < 0)
+            if (dotProduct < 0 || this.isAboveOrBelow())
             {
                 this.tunnelA.setCameraStatus(false);
                 this.fakeB.setCameraStatus(false);
@@ -176,15 +169,13 @@ public class TunnelPortal : MonoBehaviour
                     this.fakeB.setCameraStatus(false);
 
                 }
-            }
-           
+            } 
         }
     }
    
 
     public void checkPlayerPosition(bool offsetChange)
     {
-
         if (offsetChange)
         {
             this.inside = true;
@@ -199,6 +190,20 @@ public class TunnelPortal : MonoBehaviour
             this.inside = false;
             this.tunnelB.setUseOffset(true);
             this.tunnelA.setUseOffset(true);
+        }
+    }
+
+    private bool isAboveOrBelow()
+    {
+        if (this.inside)
+        {
+            if (Mathf.Abs(this.fake.position.y - this.player.position.y) >= this.HeightDiffernceThreshold) return true;
+            else return false;
+        }
+        else
+        {
+            if (Mathf.Abs(this.real.position.y - this.player.position.y) >= this.HeightDiffernceThreshold) return true;
+            else return false;
         }
         
     }
