@@ -39,12 +39,13 @@ public class RenderingControl : MonoBehaviour
         else
         {
             cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+            bool testPlanes = GeometryUtility.TestPlanesAABB(cameraFrustum, this.bounds);
 
-            if (!this.cameraToDisable.enabled && GeometryUtility.TestPlanesAABB(cameraFrustum, this.bounds))
+            if (!this.cameraToDisable.enabled && testPlanes)
             {
                 this.cameraToDisable.enabled = true;
             }
-            else if (cameraToDisable.enabled && (!GeometryUtility.TestPlanesAABB(cameraFrustum, this.bounds)))
+            else if (cameraToDisable.enabled && !testPlanes)
             {
                 this.cameraToDisable.enabled = false;
             }

@@ -45,15 +45,15 @@ public class PortalCamera : MonoBehaviour
         float angularDifference = -Vector3.SignedAngle(this.portal.forward,this.Bportal.forward,this.transform.up);
 
         Quaternion portalRotation = Quaternion.AngleAxis(angularDifference, Vector3.up);
-        Vector3 newCameraDirection = portalRotation * playerCamera.forward;
+        Vector3 newCameraDirection = portalRotation * this.playerCamera.forward;
         this.transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
 
-        Vector3 playerOffsetFromPortal = playerCamera.position - Bportal.position;
+        Vector3 playerOffsetFromPortal = this.playerCamera.position - this.Bportal.position;
         transform.position = this.portal.position + Quaternion.Euler(0f, angularDifference, 0f) * playerOffsetFromPortal;
 
         if (useOffset)
         {
-            transform.position += this.CameraOffset;
+            this.transform.position += this.CameraOffset;
         }
     }
 
