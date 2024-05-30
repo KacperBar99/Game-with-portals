@@ -75,7 +75,7 @@ public class TunnelPortal : MonoBehaviour
         Vector3 portalToPlayer;
         float dotProduct;
         cameraFrustum = GeometryUtility.CalculateFrustumPlanes(mainCamera);
-        if (inside)
+        if (this.inside)
         {
             //fake A
             portalToPlayer = player.position - fakeA.transform.position;
