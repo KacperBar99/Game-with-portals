@@ -70,10 +70,12 @@ public class PortalCamera : MonoBehaviour
     {
         if (status)
         {
+            if(this.objectCamera)
             this.objectCamera.enabled = true;
         }
         else
         {
+            if(this.objectCamera)
             this.objectCamera.enabled = false;
         }
     }
