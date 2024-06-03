@@ -6,11 +6,6 @@ niespecjalnie to pomaga, ale to tak to można o tym wspomnieć
 to zdecydowanie pomaga!
 
 Pomijąć to jest jeszcze lista rzeczy do zrobienia:
--ogarnąć shader portalu w grafie | zrobione
--zrobić przycisk tak by się klikał i animował i był jakiś komunikat na ekranie by gracz wiedział, że może sobie kliknąć | zrobione
--dodać ukrywanie kamery dla różnicy wysokości | skopiować z githuba
--dodać kilka warstw do ukrywania na kamerze | skopiować z githuba
--naprawić optymalizację | jest git
--zrobić poziomy docelowe
--dodać wyłączanie dynamicznych świateł
--napisać pracę
+-zrobić poziomy docelowe | to ważne
+-zrobić numer z oceanem widocznym przez okno, takie numery
+wykorzystać miniaturę 
