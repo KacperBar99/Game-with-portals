@@ -19105,7 +19105,7 @@ Transform:
   m_GameObject: {fileID: 2003492620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.274049, z: 0}
+  m_LocalPosition: {x: 0, y: 4.6774397, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19127,7 +19127,7 @@ ReflectionProbe:
   m_Resolution: 2048
   m_UpdateFrequency: 0
   m_BoxSize: {x: 72.715256, y: 10.954506, z: 50.99411}
-  m_BoxOffset: {x: -5.8360996, y: -0.15130138, z: -0.12697601}
+  m_BoxOffset: {x: -5.8360996, y: 0.44530773, z: -0.12697601}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
