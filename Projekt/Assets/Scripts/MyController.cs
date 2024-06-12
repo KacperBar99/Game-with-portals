@@ -21,7 +21,7 @@ public class MyController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
-    public bool canMove = true;
+    private bool canMove = true;
 
     CharacterController characterController;
 
@@ -93,5 +93,9 @@ public class MyController : MonoBehaviour
         this.walkspeed = scale*this.defaultSpeed;
         this.runSpeed = scale*this.defaultRun;
         this.jumpPower = scale*this.defaultJump;
+    }
+    public void setCanMove(bool canMove)
+    {
+        this.canMove = canMove;
     }
 }

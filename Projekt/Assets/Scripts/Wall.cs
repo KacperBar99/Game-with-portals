@@ -12,9 +12,11 @@ public class Wall : MonoBehaviour
 
     private bool isDefault = true;
     private Vector3 defaultPosition;
+    private AudioSource audioSource;
 
     private void Start()
     {
+        this.audioSource = GetComponent<AudioSource>();
         this.defaultPosition = this.transform.position;
     }
     public void Update()
@@ -33,5 +35,6 @@ public class Wall : MonoBehaviour
     public void changeState()
     {
         this.isDefault=!this.isDefault;
+        this.audioSource.Play();
     }
 }

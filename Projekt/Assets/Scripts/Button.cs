@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
@@ -16,9 +17,11 @@ public class Button : MonoBehaviour
     private Camera mainCamera;
     private Plane[] cameraFrustum;
     private Bounds bounds;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        this.audioSource = GetComponent<AudioSource>();
         var objects = GameObject.FindGameObjectsWithTag("UI");
         foreach (var obj in objects)
         {
@@ -28,7 +31,7 @@ public class Button : MonoBehaviour
                 break;
             }
         }
-        this.Icon.gameObject.SetActive(false);
+        this.Icon.SetActive(false);
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
         mainCamera = Camera.main;
         bounds = GetComponent<Collider>().bounds;
@@ -37,6 +40,7 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0) return;
         if (playerIn)
         {
             Vector3 buttonToPlayer = player.position - transform.position;
@@ -66,6 +70,7 @@ public class Button : MonoBehaviour
         {
             animator.SetTrigger("Press");
             this.sentClick.GetComponent<Wall>().changeState();
+            this.audioSource.Play();
         }
     }
     private void OnTriggerEnter(Collider other)
