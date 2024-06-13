@@ -55,7 +55,6 @@ public class Portal : MonoBehaviour
         {
             this.playerIsOverlapping = true;
         }
-        Debug.Log(other.tag);
     }
 
     private void OnTriggerExit(Collider other)

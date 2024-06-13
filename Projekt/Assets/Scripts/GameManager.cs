@@ -6,44 +6,49 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField,Tooltip("Quick test option")]
-    private bool maxFPS;
     [SerializeField]
     private GameObject pressIcon;
     [SerializeField]
     private GameObject pauseMenu;
     [SerializeField]
     private bool isMenu = false;
+    [SerializeField]
+    private GameObject settings;
     private bool paused = false;
     private GameObject player;
     private bool pressIconBefore;
+    private bool isSettings;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if (maxFPS)
-        {
-            Application.targetFrameRate = -1;
-            QualitySettings.vSyncCount = 0;
-        }
         this.player = GameObject.FindGameObjectWithTag("Player");
+        this.settings.GetComponent<Settings>().loadSettings();
+        this.settings.SetActive(false);
         if (!this.isMenu)
         {
             this.pauseMenu.SetActive(false);
         }
-        
+        else
+        {
+            this.pauseMenu.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (this.isMenu) return;
         if(Input.GetKeyDown(KeyCode.Escape)) 
         {
             if (paused)
             {
-                this.resume();
+                if (!this.isSettings)
+                {
+                    this.resume();
+                }
             }
             else
             {
@@ -70,6 +75,7 @@ public class GameManager : MonoBehaviour
     }
     public void resume()
     {
+        this.settings.SetActive(false);
         Time.timeScale = 1;
         this.paused = false;
         this.player.GetComponent<MyController>().setCanMove(true);
@@ -81,5 +87,18 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Base Level",LoadSceneMode.Single);
+    }
+    public void openSettings()
+    {
+        this.pauseMenu.SetActive(false);
+        this.settings.SetActive(true);
+        this.isSettings = true;
+    }
+    public void backToMenu()
+    {
+        this.settings.GetComponent<Settings>().save_settings();
+        this.pauseMenu.SetActive(true);
+        this.settings.SetActive(false);
+        this.isSettings = false;
     }
 }
