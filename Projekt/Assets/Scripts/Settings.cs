@@ -17,9 +17,10 @@ public class Settings : MonoBehaviour
     [SerializeField]
     private Slider volumeSlider;
     [SerializeField]
-    private Toggle fullscreenToggle;
+    private TMP_Dropdown fullscreenDropdown;
 
     private Resolution[] resolutions;
+    private FullScreenMode[] FullScreenModes;
 
     
 
@@ -44,6 +45,25 @@ public class Settings : MonoBehaviour
         this.resolutionDropdown.AddOptions(options);
         this.resolutionDropdown.value = currentResolutionIndex;
         this.resolutionDropdown.RefreshShownValue();
+
+        this.FullScreenModes = (FullScreenMode[])Enum.GetValues(typeof(FullScreenMode));
+        this.fullscreenDropdown.ClearOptions();
+        options = new List<string>();
+        int screenModeIndex = 0;
+        for(int i = 0; i < this.FullScreenModes.Length; i++)
+        {
+            string option = this.FullScreenModes[i].ToString();
+            options.Add(option);
+            if (this.FullScreenModes[i] == Screen.fullScreenMode)
+            {
+                screenModeIndex = i;
+            }
+        }
+        this.fullscreenDropdown.AddOptions(options);
+        this.fullscreenDropdown.value = screenModeIndex;
+        this.fullscreenDropdown.RefreshShownValue();
+
+
         this.loadSettings();
         this.applySettings();
     }
@@ -54,7 +74,7 @@ public class Settings : MonoBehaviour
         {
             writer.WriteLine(this.resolutionDropdown.value);
             writer.WriteLine(this.volumeSlider.value);
-            writer.WriteLine(fullscreenToggle.isOn);
+            writer.WriteLine(this.fullscreenDropdown.value);
         }
     }
 
@@ -70,17 +90,10 @@ public class Settings : MonoBehaviour
         Application.targetFrameRate = (int)resolution.refreshRateRatio.value;
     }
 
-    public void setFullscreen(bool isFullScreen)
+    public void setFullscreen(int screenIndex)
     {
-        if (isFullScreen) 
-        {
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-        }
-        else
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-        }
-        
+        FullScreenMode mode = this.FullScreenModes[screenIndex];
+        Screen.fullScreenMode = mode;
     }
 
     public void loadSettings()
@@ -97,12 +110,12 @@ public class Settings : MonoBehaviour
         if (line1 != "-1")
             this.resolutionDropdown.value = Convert.ToInt32(line1);
         this.volumeSlider.value = Convert.ToSingle(line2);
-        fullscreenToggle.isOn = Convert.ToBoolean(line3);
+        this.fullscreenDropdown.value = Convert.ToInt32(line3);
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
     }
     public void applySettings()
     {
-        this.setFullscreen(this.fullscreenToggle.isOn);
+        this.setFullscreen(this.fullscreenDropdown.value);
         this.setResolution(this.resolutionDropdown.value);
         this.setVolume(this.volumeSlider.value);
 
