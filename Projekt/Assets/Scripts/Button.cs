@@ -22,16 +22,7 @@ public class Button : MonoBehaviour
     void Start()
     {
         this.audioSource = GetComponent<AudioSource>();
-        var objects = GameObject.FindGameObjectsWithTag("UI");
-        foreach (var obj in objects)
-        {
-            if (obj.name == "Click Button") 
-            {
-                this.Icon = obj;
-                break;
-            }
-        }
-        this.Icon.SetActive(false);
+        this.Icon = GameObject.Find("Click Button");
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
         mainCamera = Camera.main;
         bounds = GetComponent<Collider>().bounds;

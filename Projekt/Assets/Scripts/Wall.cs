@@ -35,6 +35,9 @@ public class Wall : MonoBehaviour
     public void changeState()
     {
         this.isDefault=!this.isDefault;
-        this.audioSource.Play();
+        if (this.audioSource != null) 
+        {
+            this.audioSource.Play();
+        }
     }
 }

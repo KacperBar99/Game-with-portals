@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         this.settings.SetActive(false);
         if (!this.isMenu)
         {
+            this.pressIcon.SetActive(false);
             this.pauseMenu.SetActive(false);
         }
         else

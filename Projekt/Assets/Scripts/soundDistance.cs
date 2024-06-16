@@ -16,6 +16,15 @@ public class soundDistance : MonoBehaviour
     {
         this.AudioSource = GetComponent<AudioSource>();
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (Vector3.Distance(this.player.position, this.transform.position) <= MaxDistance)
+        {
+            this.inRange = true;
+        }
+        else
+        {
+            this.inRange= false;
+            this.AudioSource.Stop();
+        }
     }
 
     // Update is called once per frame
