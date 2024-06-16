@@ -35,6 +35,13 @@ public class GameManager : MonoBehaviour
         else
         {
             this.pauseMenu.SetActive(true);
+            if (statics.Finished)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                statics.Finished = false;
+                Debug.Log("Test");
+            }
         }
     }
 

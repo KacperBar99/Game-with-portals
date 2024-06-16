@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class statics : MonoBehaviour
 {
+    public static bool Finished;
     public static class AudioFadeOut
     {
         public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
