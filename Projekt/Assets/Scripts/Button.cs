@@ -10,7 +10,7 @@ public class Button : MonoBehaviour
 
     [SerializeField]
     private GameObject sentClick;
-
+    [SerializeField]
     private GameObject Icon;
     private bool playerIn = false;
     private Transform player;
@@ -22,7 +22,6 @@ public class Button : MonoBehaviour
     void Start()
     {
         this.audioSource = GetComponent<AudioSource>();
-        this.Icon = GameObject.Find("Click Button");
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
         mainCamera = Camera.main;
         bounds = GetComponent<Collider>().bounds;
@@ -44,7 +43,8 @@ public class Button : MonoBehaviour
                 {
                     this.Icon.SetActive(false);
                 }
-            }else
+            }
+            else
             {
                 cameraFrustum = GeometryUtility.CalculateFrustumPlanes(this.mainCamera);
                 if(!this.Icon.activeSelf && GeometryUtility.TestPlanesAABB(this.cameraFrustum,this.bounds)) 
@@ -66,7 +66,7 @@ public class Button : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other)
-    {     
+    {
         this.playerIn = true;
     }
     private void OnTriggerExit(Collider other)
