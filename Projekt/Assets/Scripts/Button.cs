@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class Button : MonoBehaviour
 {
     [SerializeField]
-    private GameObject sentClick;
-    [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private GameObject sentClick;
 
     private GameObject Icon;
     private bool playerIn = false;
@@ -50,6 +50,7 @@ public class Button : MonoBehaviour
                 if(!this.Icon.activeSelf && GeometryUtility.TestPlanesAABB(this.cameraFrustum,this.bounds)) 
                 {
                     this.Icon.SetActive(true);
+
                 }else if (this.Icon.activeSelf && !GeometryUtility.TestPlanesAABB(this.cameraFrustum,this.bounds)) 
                 {
                     this.Icon.SetActive(false);
@@ -57,9 +58,9 @@ public class Button : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyDown(KeyCode.E) && this.Icon.activeSelf)
+        if (Input.GetKeyDown(KeyCode.E) && this.playerIn && this.Icon.activeSelf)
         {
-            animator.SetTrigger("Press");
+            this.animator.SetTrigger("Press");
             this.sentClick.GetComponent<Wall>().changeState();
             this.audioSource.Play();
         }
