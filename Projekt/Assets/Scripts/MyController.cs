@@ -28,6 +28,7 @@ public class MyController : MonoBehaviour
     private float defaultSpeed;
     private float defaultRun;
     private float defaultJump;
+    private float defaultStep;
     
     void Start()
     {
@@ -38,6 +39,7 @@ public class MyController : MonoBehaviour
         this.defaultJump = this.jumpPower;
         this.defaultRun = this.runSpeed;
         this.defaultSpeed = this.walkspeed;
+        this.defaultStep = characterController.stepOffset;
     }
 
     // Update is called once per frame
@@ -93,6 +95,7 @@ public class MyController : MonoBehaviour
         this.walkspeed = scale*this.defaultSpeed;
         this.runSpeed = scale*this.defaultRun;
         this.jumpPower = scale*this.defaultJump;
+        this.characterController.stepOffset = scale * this.defaultStep;
     }
     public void setCanMove(bool canMove)
     {
