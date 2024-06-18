@@ -14,11 +14,15 @@ public class GameManager : MonoBehaviour
     private bool isMenu = false;
     [SerializeField]
     private GameObject settings;
+    [SerializeField]
+    private GameObject end;
     private bool paused = false;
     private GameObject player;
     private bool pressIconBefore;
     private bool isSettings;
-
+    private bool finished = false;
+    private float count=5;
+    private float counter=0;
 
 
     // Start is called before the first frame update
@@ -35,19 +39,35 @@ public class GameManager : MonoBehaviour
         else
         {
             this.pauseMenu.SetActive(true);
-            if (statics.Finished)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                statics.Finished = false;
-                Debug.Log("Test");
-            }
+        }
+        if (statics.Finished)
+        {
+            this.end.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            statics.Finished = false;
+            this.pauseMenu.SetActive(false);
+            this.finished = true;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(finished)
+        {
+            if (this.counter >= this.count)
+            {
+                this.finished=false;
+                this.end.SetActive(false);
+                this.pauseMenu.SetActive(true);
+            }
+            else
+            {
+                this.counter += Time.deltaTime;
+            }
+        }
+
         if (this.isMenu) return;
         if(Input.GetKeyDown(KeyCode.Escape)) 
         {
@@ -69,7 +89,6 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 this.pauseMenu.SetActive(true);
             }
-            
         }
     }
     public void exitToMenu()
